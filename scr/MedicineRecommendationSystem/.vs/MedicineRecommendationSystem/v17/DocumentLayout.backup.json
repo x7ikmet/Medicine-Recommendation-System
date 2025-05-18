@@ -1,0 +1,154 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\hikmet\\Desktop\\MedicineRecommendationSystem\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{574B86D8-8DDC-43B6-9822-0F694FD67EDE}|MedicineRecommendationSystem.csproj|c:\\users\\hikmet\\desktop\\medicinerecommendationsystem\\ui\\frmdoctor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{574B86D8-8DDC-43B6-9822-0F694FD67EDE}|MedicineRecommendationSystem.csproj|solutionrelative:ui\\frmdoctor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{574B86D8-8DDC-43B6-9822-0F694FD67EDE}|MedicineRecommendationSystem.csproj|c:\\users\\hikmet\\desktop\\medicinerecommendationsystem\\ui\\frmdoctor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{574B86D8-8DDC-43B6-9822-0F694FD67EDE}|MedicineRecommendationSystem.csproj|solutionrelative:ui\\frmdoctor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{574B86D8-8DDC-43B6-9822-0F694FD67EDE}|MedicineRecommendationSystem.csproj|c:\\users\\hikmet\\desktop\\medicinerecommendationsystem\\ui\\frmdoctor.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{574B86D8-8DDC-43B6-9822-0F694FD67EDE}|MedicineRecommendationSystem.csproj|solutionrelative:ui\\frmdoctor.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{574B86D8-8DDC-43B6-9822-0F694FD67EDE}|MedicineRecommendationSystem.csproj|c:\\users\\hikmet\\desktop\\medicinerecommendationsystem\\classes\\symptomentry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{574B86D8-8DDC-43B6-9822-0F694FD67EDE}|MedicineRecommendationSystem.csproj|solutionrelative:classes\\symptomentry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{574B86D8-8DDC-43B6-9822-0F694FD67EDE}|MedicineRecommendationSystem.csproj|c:\\users\\hikmet\\desktop\\medicinerecommendationsystem\\models\\interaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{574B86D8-8DDC-43B6-9822-0F694FD67EDE}|MedicineRecommendationSystem.csproj|solutionrelative:models\\interaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{574B86D8-8DDC-43B6-9822-0F694FD67EDE}|MedicineRecommendationSystem.csproj|c:\\users\\hikmet\\desktop\\medicinerecommendationsystem\\ui\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{574B86D8-8DDC-43B6-9822-0F694FD67EDE}|MedicineRecommendationSystem.csproj|solutionrelative:ui\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{574B86D8-8DDC-43B6-9822-0F694FD67EDE}|MedicineRecommendationSystem.csproj|c:\\users\\hikmet\\desktop\\medicinerecommendationsystem\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{574B86D8-8DDC-43B6-9822-0F694FD67EDE}|MedicineRecommendationSystem.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{574B86D8-8DDC-43B6-9822-0F694FD67EDE}|MedicineRecommendationSystem.csproj|c:\\users\\hikmet\\desktop\\medicinerecommendationsystem\\ui\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{574B86D8-8DDC-43B6-9822-0F694FD67EDE}|MedicineRecommendationSystem.csproj|solutionrelative:ui\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FrmDoctor.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\hikmet\\Desktop\\MedicineRecommendationSystem\\UI\\FrmDoctor.Designer.cs",
+              "RelativeDocumentMoniker": "UI\\FrmDoctor.Designer.cs",
+              "ToolTip": "C:\\Users\\hikmet\\Desktop\\MedicineRecommendationSystem\\UI\\FrmDoctor.Designer.cs",
+              "RelativeToolTip": "UI\\FrmDoctor.Designer.cs",
+              "ViewState": "AgIAAGcAAAAAAAAAAAAewHkAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-18T18:19:33.863Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "FrmDoctor.cs",
+              "DocumentMoniker": "C:\\Users\\hikmet\\Desktop\\MedicineRecommendationSystem\\UI\\FrmDoctor.cs",
+              "RelativeDocumentMoniker": "UI\\FrmDoctor.cs",
+              "ToolTip": "C:\\Users\\hikmet\\Desktop\\MedicineRecommendationSystem\\UI\\FrmDoctor.cs",
+              "RelativeToolTip": "UI\\FrmDoctor.cs",
+              "ViewState": "AgIAAI4AAAAAAAAAAAASwKQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-17T10:56:55.452Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FrmDoctor.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\hikmet\\Desktop\\MedicineRecommendationSystem\\UI\\FrmDoctor.cs",
+              "RelativeDocumentMoniker": "UI\\FrmDoctor.cs",
+              "ToolTip": "C:\\Users\\hikmet\\Desktop\\MedicineRecommendationSystem\\UI\\FrmDoctor.cs [Design]",
+              "RelativeToolTip": "UI\\FrmDoctor.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-18T17:41:59.974Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "SymptomEntry.cs",
+              "DocumentMoniker": "C:\\Users\\hikmet\\Desktop\\MedicineRecommendationSystem\\Classes\\SymptomEntry.cs",
+              "RelativeDocumentMoniker": "Classes\\SymptomEntry.cs",
+              "ToolTip": "C:\\Users\\hikmet\\Desktop\\MedicineRecommendationSystem\\Classes\\SymptomEntry.cs",
+              "RelativeToolTip": "Classes\\SymptomEntry.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-18T17:39:37.794Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Interaction.cs",
+              "DocumentMoniker": "C:\\Users\\hikmet\\Desktop\\MedicineRecommendationSystem\\Models\\Interaction.cs",
+              "RelativeDocumentMoniker": "Models\\Interaction.cs",
+              "ToolTip": "C:\\Users\\hikmet\\Desktop\\MedicineRecommendationSystem\\Models\\Interaction.cs",
+              "RelativeToolTip": "Models\\Interaction.cs",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAYwFMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-18T17:06:59.085Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Main.cs",
+              "DocumentMoniker": "C:\\Users\\hikmet\\Desktop\\MedicineRecommendationSystem\\UI\\Main.cs",
+              "RelativeDocumentMoniker": "UI\\Main.cs",
+              "ToolTip": "C:\\Users\\hikmet\\Desktop\\MedicineRecommendationSystem\\UI\\Main.cs",
+              "RelativeToolTip": "UI\\Main.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-18T16:42:09.691Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Main.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\hikmet\\Desktop\\MedicineRecommendationSystem\\UI\\Main.cs",
+              "RelativeDocumentMoniker": "UI\\Main.cs",
+              "ToolTip": "C:\\Users\\hikmet\\Desktop\\MedicineRecommendationSystem\\UI\\Main.cs [Design]",
+              "RelativeToolTip": "UI\\Main.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-18T16:41:25.632Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\hikmet\\Desktop\\MedicineRecommendationSystem\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\hikmet\\Desktop\\MedicineRecommendationSystem\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-17T10:49:59.243Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
