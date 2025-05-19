@@ -23,12 +23,33 @@ public partial class FrmDoctor : Form
     private void FrmDoctor_Load(object sender, EventArgs e)
     {
 
-        xgboostHelper = new XGBoostHelper("C:\\Users\\hikmet\\Desktop\\MedicineRecommendationSystem\\Resources\\xgboost.json");
-        //interaction = new Interaction();
-
+        xgboostHelper = new XGBoostHelper("C:\\Users\\hikmet\\Desktop\\Medicine-Recommendation-System\\scr\\MedicineRecommendationSystem\\Resources\\xgboost.json");
+        interaction = new Interaction();
+        //interaction.InteractCheck("Citalopram", "Omeprazole");
         LoadSymptoms();
         LoadDiseases();
         LoadMedication();
+        SetupListView();
+
+    }
+
+
+    private void SetupListView()
+    {
+        listView1.View = View.Details;
+        listView1.Columns.Add("İlaç Adı", 200);
+        listView1.Columns.Add("Açıklama", 200);
+        listView1.Columns.Add("Alerji", 200);
+        listView1.Columns.Add("Level", 150);
+        listView1.FullRowSelect = true;
+        listView1.GridLines = true;
+
+
+        listView3.View = View.Details;
+        listView3.Columns.Add("Hastalık Adı", 200);
+        listView3.Columns.Add("Oranı", 200);
+        listView3.FullRowSelect = true;
+        listView3.GridLines = true;
 
     }
 
@@ -61,6 +82,46 @@ public partial class FrmDoctor : Form
         }
     }
 
+
+    private void button14_Click(object sender, EventArgs e)
+    {
+        
+        string receteId = new string(Enumerable.Range(0, 5)
+            .Select(_ => "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"[new Random().Next(36)]).ToArray());
+
+        SaveReceteToCsv(receteId, listView1, "C:\\Users\\hikmet\\Desktop\\Medicine-Recommendation-System\\scr\\MedicineRecommendationSystem\\Resources\\Receteler.csv");
+        MessageBox.Show($"Recete ID: {receteId}", "Recete kaydedildi.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+    }
+    private void SaveReceteToCsv(string receteId, ListView listView1, string filePath)
+    {
+        var ilaclar = new List<string>();
+        foreach (ListViewItem item in listView1.Items)
+        {
+            ilaclar.Add(item.Text);
+        }
+
+        var record = new
+        {
+            ReceteId = receteId,
+            Ilaclar = string.Join(";", ilaclar)
+        };
+
+        bool fileExists = File.Exists(filePath);
+
+        using (var stream = File.Open(filePath, FileMode.Append, FileAccess.Write))
+        using (var writer = new StreamWriter(stream, Encoding.UTF8))
+        using (var csv = new CsvWriter(writer, CultureInfo.InvariantCulture))
+        {
+            if (!fileExists)
+            {
+                csv.WriteHeader(record.GetType());
+                csv.NextRecord();
+            }
+            csv.WriteRecord(record);
+            csv.NextRecord();
+        }
+    }
+
     private void LoadMedication()
     {
         string csvText = Encoding.UTF8.GetString(Properties.Resources.Medications);
@@ -71,7 +132,7 @@ public partial class FrmDoctor : Form
             foreach (var record in records)
             {
                 var meds = record.Medication
-                    .Trim('[', ']') 
+                    .Trim('[', ']')
                     .Split(',')
                     .Select(m => m.Trim(' ', '\'', '\"'))
                     .Where(m => !string.IsNullOrWhiteSpace(m));
@@ -89,15 +150,21 @@ public partial class FrmDoctor : Form
     private void button2_Click(object sender, EventArgs e)
     {
         UpdateDiseaseData();
+        //UpdateMedicationData();
+
+
+    }
+    private void button8_Click(object sender, EventArgs e)
+    {
         UpdateMedicationData();
-
-
     }
 
 
     private void UpdateMedicationData()
     {
-        string[] diseases = new string[listBox2.Items.Count];
+        listView1.Items.Clear();
+        HashSet<string> addedMedications = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+
         string csvText = Encoding.UTF8.GetString(Properties.Resources.Medications);
         using (var reader = new StringReader(csvText))
         using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
@@ -105,19 +172,53 @@ public partial class FrmDoctor : Form
             var records = csv.GetRecords<MedicationsEntry>();
             foreach (var record in records)
             {
-                if (listBox2.Items.Contains(record.Disease))
-                {
-                    var meds = record.Medication
+                bool diseaseExistsInListView3 = listView3.Items
+                    .Cast<ListViewItem>()
+                    .Any(item => item.SubItems[0].Text.Equals(record.Disease, StringComparison.OrdinalIgnoreCase));
+
+                if (!diseaseExistsInListView3)
+                    continue;
+
+                var meds = record.Medication
                     .Trim('[', ']')
                     .Split(',')
                     .Select(m => m.Trim(' ', '\'', '\"'))
                     .Where(m => !string.IsNullOrWhiteSpace(m));
-                    foreach (var med in meds)
-                    {
-                        // Eklmek için
-                    }
-                }
 
+                foreach (var med in meds)
+                {
+                    // Avoid duplicates
+                    string uniqueKey = $"{med}|{record.Disease}";
+                    if (addedMedications.Contains(uniqueKey))
+                        continue;
+
+                    ListViewItem item = new ListViewItem(med);
+                    item.SubItems.Add(record.Disease);
+
+                    // Check for interactions with other meds already in the list
+                    string description = "";
+                    string level = "";
+                    Color? color = null;
+                    foreach (ListViewItem existing in listView1.Items)
+                    {
+                        var result = interaction.InteractCheck(med, existing.Text);
+                        if (result != null)
+                        {
+                            //description = result.Value.Description;
+                            description = $"{med} | {existing.Text}";
+                            level = result.Value.Level;
+                            color = Color.FromName(result.Value.Color);
+                            break; // Stop at first found interaction
+                        }
+                    }
+                    item.SubItems.Add(description);
+                    item.SubItems.Add(level);
+                    if (color.HasValue)
+                        item.ForeColor = color.Value;
+
+                    listView1.Items.Add(item);
+                    addedMedications.Add(uniqueKey);
+                }
             }
         }
     }
@@ -133,10 +234,13 @@ public partial class FrmDoctor : Form
         var results = result.Take(5).ToList();
 
 
-        listView1.Clear();
+
+        listView3.Items.Clear();
         foreach (var disease in results)
         {
-            listBox2.Items.Add(disease.Disease + " - " + disease.Probability + "%");
+            ListViewItem item = new ListViewItem(disease.Disease);
+            item.SubItems.Add(disease.Probability.ToString("0.00") + "%");
+            listView3.Items.Add(item);
         }
     }
 
@@ -154,13 +258,16 @@ public partial class FrmDoctor : Form
 
     private void button7_Click(object sender, EventArgs e)
     {
-        if(comboBoxDiseases.SelectedItem == null)
+        if (comboBoxDiseases.SelectedItem == null)
         {
             MessageBox.Show("Please select a disease.", "Error");
             return;
         }
-        listBox2.Items.Add(comboBoxDiseases.SelectedItem.ToString());
+        ListViewItem item = new ListViewItem(comboBoxDiseases.SelectedItem.ToString());
+
+        listView3.Items.Add(item);
         comboBoxDiseases.Items.Remove(comboBoxDiseases?.SelectedItem?.ToString());
+        UpdateMedicationData();
     }
 
     private void button5_Click(object sender, EventArgs e)
@@ -177,16 +284,24 @@ public partial class FrmDoctor : Form
 
     private void button6_Click(object sender, EventArgs e)
     {
-        if (listBox2.Items.Count == 0)
+        if (listView3.SelectedItems.Count == 0)
         {
             MessageBox.Show("Please select an item to remove.", "Error");
             return;
         }
-        listBox2.Items.Remove(listBox2.SelectedItem.ToString());
 
-        if (listBox2.Items.Count > 0)
-            listBox2.SelectedIndex = 0;
+        listView3.Items.Remove(listView3.SelectedItems[0]);
 
+    }
+
+    private void button10_Click(object sender, EventArgs e)
+    {
+        if (listView1.SelectedItems.Count == 0)
+        {
+            MessageBox.Show("Please select an item to remove.", "Error");
+            return;
+        }
+        listView1.Items.Remove(listView1.SelectedItems[0]);
 
     }
 

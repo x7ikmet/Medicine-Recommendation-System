@@ -34,7 +34,6 @@
             button4 = new Button();
             button3 = new Button();
             panel2 = new Panel();
-            button5 = new Button();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             SuspendLayout();
@@ -42,24 +41,26 @@
             // button1
             // 
             button1.FlatStyle = FlatStyle.Flat;
-            button1.Location = new Point(537, 240);
+            button1.Font = new Font("Segoe UI", 15F);
+            button1.Location = new Point(415, 242);
             button1.Name = "button1";
             button1.Size = new Size(207, 203);
             button1.TabIndex = 0;
-            button1.Text = "button1";
+            button1.Text = "Eczaci";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // BtnDoctor
             // 
             BtnDoctor.FlatStyle = FlatStyle.Flat;
             BtnDoctor.Font = new Font("Segoe UI", 15F);
-            BtnDoctor.Location = new Point(830, 240);
+            BtnDoctor.Location = new Point(708, 242);
             BtnDoctor.Name = "BtnDoctor";
             BtnDoctor.Size = new Size(209, 203);
             BtnDoctor.TabIndex = 1;
             BtnDoctor.Text = "Doctor";
             BtnDoctor.UseVisualStyleBackColor = true;
-            BtnDoctor.Click += this.BtnDoctor_Click;
+            BtnDoctor.Click += BtnDoctor_Click;
             // 
             // panel1
             // 
@@ -107,7 +108,6 @@
             // 
             // panel2
             // 
-            panel2.Controls.Add(button5);
             panel2.Controls.Add(button1);
             panel2.Controls.Add(BtnDoctor);
             panel2.Dock = DockStyle.Fill;
@@ -115,16 +115,6 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(1325, 722);
             panel2.TabIndex = 3;
-            // 
-            // button5
-            // 
-            button5.FlatStyle = FlatStyle.Flat;
-            button5.Location = new Point(257, 240);
-            button5.Name = "button5";
-            button5.Size = new Size(207, 203);
-            button5.TabIndex = 2;
-            button5.Text = "button5";
-            button5.UseVisualStyleBackColor = true;
             // 
             // Main
             // 
@@ -150,6 +140,5 @@
         private Button button4;
         private Button button3;
         private Panel panel2;
-        private Button button5;
     }
 }

@@ -1,3 +1,5 @@
+using MedicineRecommendationSystem.UI;
+
 namespace MedicineRecommendationSystem;
 
 public partial class Main : Form
@@ -9,8 +11,8 @@ public partial class Main : Form
     {
         InitializeComponent();
     }
-    
-    
+
+
     private void button3_Click(object sender, EventArgs e)
     {
         Application.Exit();
@@ -63,6 +65,13 @@ public partial class Main : Form
     {
         FrmDoctor doctor = new FrmDoctor();
         doctor.Show();
+        this.Hide();
+    }
+
+    private void button1_Click(object sender, EventArgs e)
+    {
+        FrmEczaci eczaci = new FrmEczaci();
+        eczaci.Show();
         this.Hide();
     }
 }

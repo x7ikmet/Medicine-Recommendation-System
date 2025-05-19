@@ -37,25 +37,20 @@
             button1 = new Button();
             panel2 = new Panel();
             panel3 = new Panel();
-            button13 = new Button();
-            label4 = new Label();
+            listView3 = new ListView();
+            comboBoxDiseases = new ComboBox();
             button14 = new Button();
-            listView2 = new ListView();
-            button9 = new Button();
             button10 = new Button();
             label3 = new Label();
             button11 = new Button();
             comboBoxMedication = new ComboBox();
             listView1 = new ListView();
-            columnHeader1 = new ColumnHeader();
             button8 = new Button();
             button6 = new Button();
             label2 = new Label();
             button7 = new Button();
             button5 = new Button();
             button2 = new Button();
-            listBox2 = new ListBox();
-            comboBoxDiseases = new ComboBox();
             panel1.SuspendLayout();
             panel3.SuspendLayout();
             SuspendLayout();
@@ -109,7 +104,7 @@
             listBox1.FormattingEnabled = true;
             listBox1.Location = new Point(19, 93);
             listBox1.Name = "listBox1";
-            listBox1.Size = new Size(907, 104);
+            listBox1.Size = new Size(907, 124);
             listBox1.TabIndex = 1;
             // 
             // comboBoxSymptoms
@@ -149,18 +144,15 @@
             panel2.Dock = DockStyle.Left;
             panel2.Location = new Point(0, 37);
             panel2.Name = "panel2";
-            panel2.Size = new Size(83, 687);
+            panel2.Size = new Size(83, 923);
             panel2.TabIndex = 6;
             // 
             // panel3
             // 
             panel3.AutoScroll = true;
+            panel3.Controls.Add(listView3);
             panel3.Controls.Add(comboBoxDiseases);
-            panel3.Controls.Add(button13);
-            panel3.Controls.Add(label4);
             panel3.Controls.Add(button14);
-            panel3.Controls.Add(listView2);
-            panel3.Controls.Add(button9);
             panel3.Controls.Add(button10);
             panel3.Controls.Add(label3);
             panel3.Controls.Add(button11);
@@ -172,7 +164,6 @@
             panel3.Controls.Add(button7);
             panel3.Controls.Add(button5);
             panel3.Controls.Add(button2);
-            panel3.Controls.Add(listBox2);
             panel3.Controls.Add(label1);
             panel3.Controls.Add(listBox1);
             panel3.Controls.Add(button1);
@@ -180,56 +171,37 @@
             panel3.Dock = DockStyle.Fill;
             panel3.Location = new Point(83, 37);
             panel3.Name = "panel3";
-            panel3.Size = new Size(1015, 687);
+            panel3.Size = new Size(1015, 923);
             panel3.TabIndex = 7;
             // 
-            // button13
+            // listView3
             // 
-            button13.Font = new Font("Segoe UI", 10F);
-            button13.Location = new Point(330, 599);
-            button13.Name = "button13";
-            button13.Size = new Size(94, 29);
-            button13.TabIndex = 24;
-            button13.Text = "Sil";
-            button13.UseVisualStyleBackColor = true;
+            listView3.Location = new Point(19, 260);
+            listView3.Name = "listView3";
+            listView3.Size = new Size(907, 126);
+            listView3.TabIndex = 26;
+            listView3.UseCompatibleStateImageBehavior = false;
             // 
-            // label4
+            // comboBoxDiseases
             // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 12F);
-            label4.Location = new Point(19, 600);
-            label4.Name = "label4";
-            label4.Size = new Size(69, 28);
-            label4.TabIndex = 22;
-            label4.Text = "Reçete";
+            comboBoxDiseases.AutoCompleteMode = AutoCompleteMode.Suggest;
+            comboBoxDiseases.AutoCompleteSource = AutoCompleteSource.ListItems;
+            comboBoxDiseases.FormattingEnabled = true;
+            comboBoxDiseases.Location = new Point(124, 226);
+            comboBoxDiseases.Name = "comboBoxDiseases";
+            comboBoxDiseases.Size = new Size(260, 28);
+            comboBoxDiseases.TabIndex = 25;
             // 
             // button14
             // 
-            button14.Font = new Font("Segoe UI", 10F);
-            button14.Location = new Point(230, 599);
+            button14.Font = new Font("Segoe UI", 15F);
+            button14.Location = new Point(19, 800);
             button14.Name = "button14";
-            button14.Size = new Size(94, 29);
+            button14.Size = new Size(201, 43);
             button14.TabIndex = 23;
-            button14.Text = "Oluştur";
+            button14.Text = "Reçete Oluştur";
             button14.UseVisualStyleBackColor = true;
-            // 
-            // listView2
-            // 
-            listView2.Location = new Point(19, 643);
-            listView2.Name = "listView2";
-            listView2.Size = new Size(907, 125);
-            listView2.TabIndex = 20;
-            listView2.UseCompatibleStateImageBehavior = false;
-            // 
-            // button9
-            // 
-            button9.Font = new Font("Segoe UI", 10F);
-            button9.Location = new Point(595, 404);
-            button9.Name = "button9";
-            button9.Size = new Size(94, 29);
-            button9.TabIndex = 19;
-            button9.Text = "Analiz";
-            button9.UseVisualStyleBackColor = true;
+            button14.Click += button14_Click;
             // 
             // button10
             // 
@@ -240,6 +212,7 @@
             button10.TabIndex = 18;
             button10.Text = "Sil";
             button10.UseVisualStyleBackColor = true;
+            button10.Click += button10_Click;
             // 
             // label3
             // 
@@ -273,16 +246,11 @@
             // 
             // listView1
             // 
-            listView1.Columns.AddRange(new ColumnHeader[] { columnHeader1 });
             listView1.Location = new Point(19, 447);
             listView1.Name = "listView1";
-            listView1.Size = new Size(907, 130);
+            listView1.Size = new Size(907, 327);
             listView1.TabIndex = 14;
             listView1.UseCompatibleStateImageBehavior = false;
-            // 
-            // columnHeader1
-            // 
-            columnHeader1.Text = "İlaç Adı";
             // 
             // button8
             // 
@@ -293,6 +261,7 @@
             button8.TabIndex = 13;
             button8.Text = "Analiz";
             button8.UseVisualStyleBackColor = true;
+            button8.Click += button8_Click;
             // 
             // button6
             // 
@@ -348,29 +317,11 @@
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
             // 
-            // listBox2
-            // 
-            listBox2.FormattingEnabled = true;
-            listBox2.Location = new Point(19, 268);
-            listBox2.Name = "listBox2";
-            listBox2.Size = new Size(907, 104);
-            listBox2.TabIndex = 6;
-            // 
-            // comboBoxDiseases
-            // 
-            comboBoxDiseases.AutoCompleteMode = AutoCompleteMode.Suggest;
-            comboBoxDiseases.AutoCompleteSource = AutoCompleteSource.ListItems;
-            comboBoxDiseases.FormattingEnabled = true;
-            comboBoxDiseases.Location = new Point(124, 226);
-            comboBoxDiseases.Name = "comboBoxDiseases";
-            comboBoxDiseases.Size = new Size(260, 28);
-            comboBoxDiseases.TabIndex = 25;
-            // 
             // FrmDoctor
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1098, 724);
+            ClientSize = new Size(1098, 960);
             Controls.Add(panel3);
             Controls.Add(panel2);
             Controls.Add(panel1);
@@ -397,23 +348,18 @@
         private Button button4;
         private Button button3;
         private Button button2;
-        private ListBox listBox2;
         private Button button8;
         private Button button6;
         private Label label2;
         private Button button7;
         private Button button5;
         private ListView listView1;
-        private Button button9;
         private Button button10;
         private Label label3;
         private Button button11;
         private ComboBox comboBoxMedication;
-        private Button button13;
-        private Label label4;
         private Button button14;
-        private ListView listView2;
-        private ColumnHeader columnHeader1;
         private ComboBox comboBoxDiseases;
+        private ListView listView3;
     }
 }
